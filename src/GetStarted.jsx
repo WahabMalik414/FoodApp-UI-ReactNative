@@ -8,7 +8,10 @@ const GetStarted = () => {
         <DeliveryManSvg />
       </View>
       <View style={styles.bottomContainer}>
-        <Text style={styles.mainText}>Quick Deliver at your Doorstep</Text>
+        <Text style={styles.mainText}>
+          Quick Deliver at your
+          <Text style={{color: '#fc605f'}}> Doorstep</Text>
+        </Text>
         <Text style={styles.detail}>
           Home delivery and online reservation system for restaurants and cafe
         </Text>
