@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from './src/Home';
+import GetStarted from './src/GetStarted';
 
 export default function App() {
-  return <Home />;
+  return <GetStarted />;
 }

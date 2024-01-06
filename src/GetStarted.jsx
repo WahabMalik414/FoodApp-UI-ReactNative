@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import DeliveryManSvg from '../assets/delivery-man';
-const Home = () => {
+const GetStarted = () => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -25,7 +25,7 @@ const Home = () => {
     </View>
   );
 };
-export default Home;
+export default GetStarted;
 
 const styles = StyleSheet.create({
   container: {
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     width: '75%',
     height: '30%',
     borderRadius: 25,
+    elevation: 10,
   },
   mainText: {
     paddingLeft: 20,
