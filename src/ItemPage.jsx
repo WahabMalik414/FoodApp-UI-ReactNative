@@ -3,12 +3,19 @@ import {View, Text, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {StyleSheet} from 'react-native';
 import WholePizza2 from '../assets/WholePizza2';
-
+import { useNavigation } from '@react-navigation/native';
 export default function ItemPage() {
+  const navigation = useNavigation();
+  const handleBack=()=>{
+    navigation.goBack();
+  }
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.topMenuContainer}>
-        <Icon name="back" size={30} color="black" />
+        <Pressable onPress={handleBack}>
+          <Icon name="back" size={30} color="black" />
+        </Pressable>
         <Icon name="hearto" size={30} color="black" />
       </View>
       <Text style={styles.foodTitle}>Melting Cheese</Text>
@@ -37,14 +44,14 @@ export default function ItemPage() {
       </View>
       <Text style={styles.total}>$ 19.34</Text>
       <Pressable
-          style={({pressed}) => [
-            {
-              backgroundColor: pressed ? '#ffb5b5' : '#FA6E6E',
-            },
-            styles.getStartedButton,
-          ]}>
-          <Text style={styles.getStartedText}>ADD TO CART</Text>
-        </Pressable>
+        style={({pressed}) => [
+          {
+            backgroundColor: pressed ? '#ffb5b5' : '#FA6E6E',
+          },
+          styles.getStartedButton,
+        ]}>
+        <Text style={styles.getStartedText}>ADD TO CART</Text>
+      </Pressable>
     </View>
   );
 }
@@ -58,7 +65,9 @@ styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 20,
+    paddingLeft: 10,
+    paddingRight: 20,
+    paddingTop:20
   },
   foodTitle: {
     color: 'black',
@@ -75,24 +84,24 @@ styles = StyleSheet.create({
   },
   plusContainer: {
     padding: 5,
-    elevation:10,
+    elevation: 10,
     borderRadius: 10,
   },
-  plusMinusContainer:{
+  plusMinusContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width:'30%',
-    alignItems:'center',
+    width: '30%',
+    alignItems: 'center',
   },
-  count:{
-    alignItems:'center',
-    fontSize:20,
-    color:'black'
+  count: {
+    alignItems: 'center',
+    fontSize: 20,
+    color: 'black',
   },
-  total:{
-    marginTop:7,
-    fontSize:20,
-    justifyContent:'center',
+  total: {
+    marginTop: 7,
+    fontSize: 20,
+    justifyContent: 'center',
   },
   getStartedText: {
     alignSelf: 'center',

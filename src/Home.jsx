@@ -9,7 +9,15 @@ import Pizza from '../assets/Pizza';
 import Fire from '../assets/Fire';
 import WholePizza from '../assets/WholePizza';
 import WholePizza2 from '../assets/WholePizza2';
+import { useNavigation } from '@react-navigation/native';
+
 export default function Home() {
+  const navigation = useNavigation();
+
+  const handleMenuPress = () => {
+    navigation.navigate('ItemPage');
+  }
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.topView}>
@@ -91,6 +99,7 @@ export default function Home() {
       </View>
       <View style={styles.menuButtomContainer}>
         <Pressable
+        onPress={handleMenuPress}
           style={({pressed}) => [
             {
               backgroundColor: pressed ? '#ffb5b5' : '#FA6E6E',
@@ -112,8 +121,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: '15%',
     justifyContent: 'space-between',
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 23,
+    paddingRight: 23,
     alignItems: 'center',
   },
   searchContainer: {
@@ -123,7 +132,7 @@ const styles = StyleSheet.create({
   },
   helloTextContainer: {
     height: '15%',
-    paddingLeft: 20,
+    paddingLeft: 23,
     justifyContent: 'center',
   },
   userNameStyle: {
@@ -147,16 +156,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingRight: '10%',
-    paddingLeft: 20,
+    paddingLeft: 27,
   },
   popularText: {
-    paddingLeft: 20,
     color: '#4F4F4F',
     fontSize: 22,
     fontWeight: '700',
   },
   popularTextContainer: {
     marginTop: 50,
+    paddingLeft:23
   },
 
   itemName: {
@@ -180,7 +189,10 @@ const styles = StyleSheet.create({
   },
   popular: {
     width: '40%',
-    padding: 15,
+    paddingRight: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft:24,
     alignItems: 'center',
     backgroundColor: 'white',
     elevation: 10,
@@ -188,22 +200,21 @@ const styles = StyleSheet.create({
   },
   wholePizzaContainer: {
     marginTop: 10,
-    width: '100%', // Ensure the wholePizza container takes the full width
-    aspectRatio: 1, // Ensure the aspect ratio remains 1:1
-    overflow: 'hidden', // Hide any content that overflows the container
+    width: '100%',
+    aspectRatio: 1, 
+    overflow: 'hidden', 
   },
   plusContainer: {
-    borderRadius: 999,
-    padding: 5,
+    borderRadius: 10,
     marginTop: 10,
+    elevation:10,
   },
   menuBottom: {
+    padding:15,
     justifyContent: 'center',
-    width: '20%',
     alignItems: 'center',
-    height: '70%',
     elevation: 10,
-    borderRadius: 999,
+    borderRadius: 99999,
   },
   menuButtomContainer: {
     flex: 1,

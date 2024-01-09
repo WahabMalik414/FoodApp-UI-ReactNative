@@ -1,7 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import DeliveryManSvg from '../assets/delivery-man';
+import { useNavigation } from '@react-navigation/native';
 const GetStarted = () => {
+  const navigation = useNavigation();
+  function handlePress(){
+    console.log("here")
+    navigation.navigate('Home')
+  }
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -16,6 +22,7 @@ const GetStarted = () => {
           Home delivery and online reservation system for restaurants and cafe
         </Text>
         <Pressable
+        onPress={handlePress}
           style={({pressed}) => [
             {
               backgroundColor: pressed ? '#ffb5b5' : '#FA6E6E',
